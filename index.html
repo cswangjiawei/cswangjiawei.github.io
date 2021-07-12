@@ -323,20 +323,20 @@
       
         
           
-            <p>​         C++以by value方式传递参数容易造成对象切割问题。当一个子类对象以by value方式传递并被视为父类对象，父类的copy构造函数会被调用，而“造成此对象的行为像个子类对象”的那些特化性质全被切割了，仅仅留下一个父类对象。假设你在一组classes上工作，用来实现一个图形窗口系统：</p>
+            <p> &ensp;C++以by value方式传递参数容易造成对象切割问题。当一个子类对象以by value方式传递并被视为父类对象，父类的copy构造函数会被调用，而“造成此对象的行为像个子类对象”的那些特化性质全被切割了，仅仅留下一个父类对象。假设你在一组classes上工作，用来实现一个图形窗口系统：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Window</span> &#123;</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">      ...</span><br><span class="line">      <span class="function">std::string <span class="title">name</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line">      <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">WindowWithScrollBars</span>:</span> <span class="keyword">public</span> Window &#123;</span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">display</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>​        display 是个虚函数，父类 Window 对象的显示方式和子类 WindowScrollBars 的显示方式不同。假设你希望打印窗口名称并显示该窗口：</p>
+<p> &ensp;display 是个虚函数，父类 Window 对象的显示方式和子类 WindowScrollBars 的显示方式不同。假设你希望打印窗口名称并显示该窗口：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printNameAndDisplay</span><span class="params">(Window w)</span> </span>&#123;</span><br><span class="line">    std::cout&lt;&lt;w.<span class="built_in">name</span>();</span><br><span class="line">    w.<span class="built_in">display</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>​       当你调用上述函数并传递一个 WindowWithScrollBars 对象：</p>
+<p>   &ensp;当你调用上述函数并传递一个 WindowWithScrollBars 对象：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">WindowWithScrollBars wwsb;</span><br><span class="line"><span class="built_in">printNameAndDisplay</span>(wwsb);</span><br></pre></td></tr></table></figure>
 
-<p>​        参数 w 会被构造为一个 Window 对象。造成  wwsb “之所以是个WindowScrollBars 对象” 的所有特化信息都被切除。在 printNameAndDisplay 函数内无论传递过来的对象原本是父类还是子类，参数 w 都会被构造为 Window 对象（父类的 copy 构造函数被调用）。</p>
-<p>​        以 by reference-to-const 的方式传递参数可以避免对象切割：</p>
+<p> &ensp;参数 w 会被构造为一个 Window 对象。造成  wwsb “之所以是个WindowScrollBars 对象” 的所有特化信息都被切除。在 printNameAndDisplay 函数内无论传递过来的对象原本是父类还是子类，参数 w 都会被构造为 Window 对象（父类的 copy 构造函数被调用）。  </p>
+<p>&ensp; 以 by reference-to-const 的方式传递参数可以避免对象切割：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printNameAndDisplay</span><span class="params">(Window&amp; w)</span> </span>&#123;</span><br><span class="line">    std::cout&lt;&lt;w.<span class="built_in">name</span>();</span><br><span class="line">    w.<span class="built_in">display</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>​       现在，传进来的是什么类型，w 就表现出什么类型</p>
+<p>  &ensp;现在，传进来的是什么类型，w 就表现出什么类型</p>
 
           
         
