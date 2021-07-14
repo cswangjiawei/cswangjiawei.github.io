@@ -87,7 +87,7 @@
 <meta property="og:description" content="定义一个带有构造函数和析构函数类型的变量，当程序执行到变量的定义式时，构造函数便会被执行，当变量离开作用域时，析构函数便会被执行。即使这个变量从未被使用，比如如下代码：   12345678std::string encrypt_password(const std::string&amp; password) &amp;#123;    std::string encrypted;    if (pas">
 <meta property="og:locale">
 <meta property="article:published_time" content="2021-07-14T14:08:42.000Z">
-<meta property="article:modified_time" content="2021-07-14T14:43:19.513Z">
+<meta property="article:modified_time" content="2021-07-14T14:50:54.360Z">
 <meta property="article:author" content="天策上将">
 <meta property="article:tag" content="C++, python">
 <meta name="twitter:card" content="summary">
@@ -350,7 +350,7 @@
 <p>情况B:</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; ++i) &#123;</span><br><span class="line">    <span class="function">Widget <span class="title">w</span><span class="params">(取决于i的值)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>情况 A 的成本为：1次构造函数 + n 次赋值操作 + 1 次析构函数                                                               情况 B 的成本为：n 次构造函数 + n 次析构函数</p>
+<p>情况 A 的成本为：1次构造函数 + n 次赋值操作 + 1 次析构函数<br>情况 B 的成本为：n 次构造函数 + n 次析构函数</p>
 <p>当一个赋值操作成本低于一组构造成本 + 析构成本，情况 A 的成本低于情况 B 。情况 B 的 w 作用域限制在循环内，情况 A 不利于对程序时的可理解性和易维护性。因此除非：（1）明确一个赋值操作成本低于一组构造成本 + 析构成本；（2）正在处理效率高度敏感的代码。 否则使用情况 B。</p>
 
       
