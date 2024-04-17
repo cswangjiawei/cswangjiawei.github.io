@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="mongo,python," />
+  <meta name="keywords" content="POSIX," />
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="mongo读偏好模式包括primary、primaryPreferred、secondary、secondaryPreferred、nearest：primary：默认模式。所有的读操作都从主库读取primaryPreferred：在大多数情况下，从主库读取，当主库不可用时，从从库读取secondary：所有的读操作都从从库读取secondaryPreferred：在大多数情况下，从从库读取，从库">
+<meta name="description" content="POSIX（Portable Operating System Interface，可移植操作系统接口）是一组操作系统接口的标准规范，旨在提供 UNIX-like 操作系统的通用接口。它的目标是为不同的 UNIX-like 系统提供一个统一的接口，以便于开发者编写可移植的应用程序。 主要特点和内容： 标准化接口：POSIX 定义了一组标准的操作系统接口，包括文件 I&#x2F;O、进程管理、线程管理、信号处">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mongo读偏好">
-<meta property="og:url" content="http://example.com/2021/09/19/mongo%E8%AF%BB%E5%81%8F%E5%A5%BD/index.html">
+<meta property="og:title" content="POSIX">
+<meta property="og:url" content="http://example.com/2024/04/18/POSIX/index.html">
 <meta property="og:site_name" content="天策上将">
-<meta property="og:description" content="mongo读偏好模式包括primary、primaryPreferred、secondary、secondaryPreferred、nearest：primary：默认模式。所有的读操作都从主库读取primaryPreferred：在大多数情况下，从主库读取，当主库不可用时，从从库读取secondary：所有的读操作都从从库读取secondaryPreferred：在大多数情况下，从从库读取，从库">
+<meta property="og:description" content="POSIX（Portable Operating System Interface，可移植操作系统接口）是一组操作系统接口的标准规范，旨在提供 UNIX-like 操作系统的通用接口。它的目标是为不同的 UNIX-like 系统提供一个统一的接口，以便于开发者编写可移植的应用程序。 主要特点和内容： 标准化接口：POSIX 定义了一组标准的操作系统接口，包括文件 I&#x2F;O、进程管理、线程管理、信号处">
 <meta property="og:locale">
-<meta property="article:published_time" content="2021-09-19T02:38:06.000Z">
-<meta property="article:modified_time" content="2021-09-19T03:02:18.591Z">
+<meta property="article:published_time" content="2024-04-17T23:50:34.000Z">
+<meta property="article:modified_time" content="2024-04-17T23:55:22.030Z">
 <meta property="article:author" content="天策上将">
-<meta property="article:tag" content="mongo">
-<meta property="article:tag" content="python">
+<meta property="article:tag" content="POSIX">
 <meta name="twitter:card" content="summary">
 
 
@@ -121,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://example.com/2021/09/19/mongo读偏好/"/>
+  <link rel="canonical" href="http://example.com/2024/04/18/POSIX/"/>
 
 
 
 
 
-  <title>mongo读偏好 | 天策上将</title>
+  <title>POSIX | 天策上将</title>
   
 
 
@@ -254,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/19/mongo%E8%AF%BB%E5%81%8F%E5%A5%BD/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/04/18/POSIX/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -271,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">mongo读偏好</h1>
+          <h1 class="post-title" itemprop="name headline">POSIX</h1>
         
 
         <div class="post-meta">
@@ -283,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-09-19T10:38:06+08:00">
-                2021-09-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2024-04-18T07:50:34+08:00">
+                2024-04-18
               </time>
             
 
@@ -306,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/mongo/" itemprop="url" rel="index">
-                    <span itemprop="name">mongo</span>
+                  <a href="/categories/POSIX/" itemprop="url" rel="index">
+                    <span itemprop="name">POSIX</span>
                   </a>
                 </span>
 
@@ -348,9 +347,60 @@
       
 
       
-        <p>mongo读偏好模式包括primary、primaryPreferred、secondary、secondaryPreferred、nearest：<br>primary：默认模式。所有的读操作都从主库读取<br>primaryPreferred：在大多数情况下，从主库读取，当主库不可用时，从从库读取<br>secondary：所有的读操作都从从库读取<br>secondaryPreferred：在大多数情况下，从从库读取，从库不可用时，从主库读取<br>nearest：根据指定的延迟阈值，随机选择集群成员读取，不论主库还是从库</p>
-<h3 id="pymongo设置读偏好模式"><a href="#pymongo设置读偏好模式" class="headerlink" title="pymongo设置读偏好模式"></a>pymongo设置读偏好模式</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pymongo</span><br><span class="line">cluster = [ip1:port1, ip2:port2, ip3:port3]</span><br><span class="line">clinet = pymongo.MongoClinet(cluster, readPreference=<span class="string">&#x27;secondaryPreferred&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
+        <p>POSIX（Portable Operating System Interface，可移植操作系统接口）是一组操作系统接口的标准规范，旨在提供 UNIX-like 操作系统的通用接口。它的目标是为不同的 UNIX-like 系统提供一个统一的接口，以便于开发者编写可移植的应用程序。</p>
+<h3 id="主要特点和内容："><a href="#主要特点和内容：" class="headerlink" title="主要特点和内容："></a>主要特点和内容：</h3><ol>
+<li><p><strong>标准化接口</strong>：POSIX 定义了一组标准的操作系统接口，包括文件 I/O、进程管理、线程管理、信号处理、网络通信等。这些接口提供了一致的方式来与操作系统进行交互，使得应用程序在不同的 POSIX 兼容系统上具有相同的行为。</p>
+</li>
+<li><p><strong>跨平台性</strong>：POSIX 标准被设计为跨平台的，可以在不同的 UNIX-like 操作系统上使用。通过遵循 POSIX 规范，开发者可以编写一次代码，然后在多个 POSIX 兼容的操作系统上进行编译和运行，从而提高了应用程序的可移植性。</p>
+</li>
+<li><p><strong>可扩展性</strong>：POSIX 标准是可以扩展的，可以根据不同的系统和需求进行定制。例如，可以根据 POSIX 标准定义新的系统调用或者库函数，以满足特定的应用场景。</p>
+</li>
+<li><p><strong>历史背景</strong>：POSIX 标准最初由 IEEE 制定，旨在标准化 UNIX-like 操作系统的接口。它是基于早期 UNIX 系统的经验和实践总结而来的，后来被广泛应用于各种 UNIX-like 系统中，包括 Linux、macOS、FreeBSD 等。</p>
+</li>
+</ol>
+<h3 id="核心组成："><a href="#核心组成：" class="headerlink" title="核心组成："></a>核心组成：</h3><ol>
+<li><p><strong>系统调用</strong>：包括文件操作、进程管理、信号处理等系统级功能的调用接口。</p>
+</li>
+<li><p><strong>库函数</strong>：包括标准 C 库函数以及 POSIX 特定的库函数，用于实现各种系统功能。</p>
+</li>
+<li><p><strong>头文件</strong>：包括定义系统调用和库函数的头文件，用于在应用程序中引用相应的函数原型和常量。</p>
+</li>
+</ol>
+<p>总的来说，POSIX 标准是 UNIX-like 操作系统的重要组成部分，它定义了一组标准的操作系统接口，提供了一致的方式来编写可移植的应用程序。通过遵循 POSIX 规范，开发者可以编写具有跨平台性的应用程序，实现在不同的 POSIX 兼容系统上的可移植性。</p>
+<h3 id="POSIX与C语言的关系："><a href="#POSIX与C语言的关系：" class="headerlink" title="POSIX与C语言的关系："></a>POSIX与C语言的关系：</h3><p>POSIX（Portable Operating System Interface）与C语言之间有密切的关系，因为 POSIX 标准是基于 C 语言的，并且 POSIX 定义了一系列在 C 语言中使用的系统接口和库函数。以下是 POSIX 与 C 语言之间的关系：</p>
+<ol>
+<li><p><strong>基于 C 语言</strong>：POSIX 标准是基于 C 语言的，它定义了一组 C 函数、宏和数据结构，用于操作系统接口的实现。因此，POSIX 兼容的操作系统需要提供 C 语言的接口来实现 POSIX 规范中定义的功能。</p>
+</li>
+<li><p><strong>系统调用</strong>：在 POSIX 中，许多操作系统功能通过系统调用（System Call）来实现，这些系统调用是 C 语言中的函数，用于与操作系统内核进行交互。例如，<code>open()</code>、<code>read()</code>、<code>write()</code> 等函数就是 POSIX 中定义的系统调用，用于文件 I/O 操作。</p>
+</li>
+<li><p><strong>标准库函数</strong>：除了系统调用之外，POSIX 还定义了一些标准的 C 库函数，用于实现各种系统功能。这些库函数包括文件操作、进程管理、线程管理、信号处理等。在 POSIX 兼容的系统中，这些标准库函数需要提供对应的实现，以便应用程序在不同的 POSIX 系统上具有相同的行为。</p>
+</li>
+<li><p><strong>头文件</strong>：为了使用 POSIX 中定义的函数和常量，通常需要包含对应的头文件。这些头文件通常以 <code>.h</code> 结尾，例如 <code>&lt;stdio.h&gt;</code>、<code>&lt;unistd.h&gt;</code> 等。这些头文件定义了 POSIX API 中的函数原型、常量和数据结构，使得开发者可以在 C 语言中调用这些函数和使用这些常量。</p>
+</li>
+</ol>
+<p>因此，POSIX 与 C 语言之间的关系非常紧密，POSIX 标准提供了一组在 C 语言中使用的系统接口和库函数，使得开发者可以编写与操作系统相关的 C 语言程序，并且在不同的 POSIX 兼容系统上具有可移植性。</p>
+<h3 id="POSIX与C-的关系："><a href="#POSIX与C-的关系：" class="headerlink" title="POSIX与C++的关系："></a>POSIX与C++的关系：</h3><p>POSIX（Portable Operating System Interface）与C++之间的关系主要体现在以下几个方面：</p>
+<ol>
+<li><p><strong>C++语言的兼容性</strong>：POSIX标准是基于C语言的，而C++是C的超集，因此POSIX的很多特性和函数也是可以直接在C++中使用的。C++程序员可以直接使用POSIX定义的函数和数据结构，以及包含对应的头文件来开发与操作系统相关的程序。</p>
+</li>
+<li><p><strong>标准库的扩展</strong>：C++标准库（STL）在一定程度上包含了POSIX的功能，并且提供了更高级的抽象和封装。例如，C++标准库提供了对文件I/O、多线程、进程管理等功能的支持，这些功能在底层可能会调用POSIX的相关接口。</p>
+</li>
+<li><p><strong>C++封装</strong>：在C++中，程序员可以使用面向对象的思想来封装POSIX的底层功能。通过封装，可以隐藏底层的细节，提供更高级的接口和抽象，使得程序更加易于使用和理解。这种方式能够充分发挥C++的面向对象特性，提高代码的可维护性和可重用性。</p>
+</li>
+<li><p><strong>跨平台性</strong>：与C一样，C++也是一种跨平台的编程语言，可以在不同的操作系统上编写可移植的程序。因此，通过使用C++和POSIX的组合，开发者可以编写具有跨平台性的系统级应用程序，实现在不同操作系统上的可移植性。</p>
+</li>
+</ol>
+<p>总的来说，虽然POSIX是基于C语言的标准，但它与C++之间有着紧密的关系。C++程序员可以直接使用POSIX的功能来开发系统级应用程序，并且通过C++的面向对象特性和标准库的扩展，提供更高级的抽象和封装，从而实现更加优雅和可维护的代码。</p>
+<h3 id="POSIX与Java的关系："><a href="#POSIX与Java的关系：" class="headerlink" title="POSIX与Java的关系："></a>POSIX与Java的关系：</h3><p>POSIX（Portable Operating System Interface）是一组操作系统接口的标准规范，旨在提供 UNIX-like 操作系统的通用接口。它定义了一组用于实现操作系统功能的标准 API，包括文件 I/O、进程管理、线程管理、信号处理等。Java 是一种跨平台的编程语言，最初由 Sun Microsystems 开发，现在由 Oracle 公司维护。虽然 POSIX 和 Java 是两种不同的技术，但它们之间存在一些关系：</p>
+<ol>
+<li><p><strong>Java 对 POSIX 的支持</strong>：Java 平台提供了一些对 POSIX 标准的支持，使得开发者可以在 Java 程序中使用 POSIX 标准的部分功能。例如，Java 的 <code>java.io</code> 和 <code>java.nio</code> 包提供了文件 I/O 功能，与 POSIX 中的文件 I/O 接口类似。</p>
+</li>
+<li><p><strong>JNI（Java Native Interface）</strong>：JNI 是 Java 提供的一种机制，允许 Java 程序调用本地（Native）代码。通过 JNI，Java 程序可以调用 C/C++ 编写的本地库，而这些本地库可以使用 POSIX 标准的 API。这种方式可以让 Java 程序在需要时与底层操作系统进行交互，利用操作系统提供的功能。</p>
+</li>
+<li><p><strong>Java 的跨平台性</strong>：Java 的设计目标之一就是实现跨平台性，即在不同的操作系统和硬件平台上都能够运行。虽然 Java 平台自身并不依赖于 POSIX，但通过 Java 的抽象层和跨平台特性，开发者可以编写与操作系统无关的 Java 程序。</p>
+</li>
+</ol>
+<p>虽然 POSIX 和 Java 是不同的技术，但它们在某些方面是相辅相成的。通过 Java 对 POSIX 的支持和 JNI 机制，开发者可以在 Java 程序中使用 POSIX 标准的功能，并且在跨平台开发中充分利用 Java 的跨平台特性。</p>
 
       
     </div>
@@ -368,9 +418,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/mongo/" rel="tag"># mongo</a>
-          
-            <a href="/tags/python/" rel="tag"># python</a>
+            <a href="/tags/POSIX/" rel="tag"># POSIX</a>
           
         </div>
       
@@ -383,8 +431,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2021/09/04/%E6%8F%90%E5%8F%96%E6%8C%87%E5%AE%9A%E6%97%B6%E9%97%B4%E6%AE%B5%E6%97%A5%E5%BF%97/" rel="next" title="提取指定时间段日志">
-                <i class="fa fa-chevron-left"></i> 提取指定时间段日志
+              <a href="/2024/04/13/%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99/" rel="next" title="开闭原则">
+                <i class="fa fa-chevron-left"></i> 开闭原则
               </a>
             
           </div>
@@ -392,10 +440,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2023/11/26/std-packaged-task/" rel="prev" title="std::packaged_task">
-                std::packaged_task <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -531,7 +575,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#pymongo%E8%AE%BE%E7%BD%AE%E8%AF%BB%E5%81%8F%E5%A5%BD%E6%A8%A1%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">pymongo设置读偏好模式</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E7%89%B9%E7%82%B9%E5%92%8C%E5%86%85%E5%AE%B9%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">主要特点和内容：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E7%BB%84%E6%88%90%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">核心组成：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#POSIX%E4%B8%8EC%E8%AF%AD%E8%A8%80%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">POSIX与C语言的关系：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#POSIX%E4%B8%8EC-%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%9A"><span class="nav-number">4.</span> <span class="nav-text">POSIX与C++的关系：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#POSIX%E4%B8%8EJava%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%9A"><span class="nav-number">5.</span> <span class="nav-text">POSIX与Java的关系：</span></a></li></ol></div>
             
 
           </div>
